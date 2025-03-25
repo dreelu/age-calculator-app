@@ -1,0 +1,14 @@
+@import "tailwindcss"; 
+
+@theme {
+
+    /* Primary Colors */
+    --color-purple: hsl(259, 100%, 65%);
+    --color-lightred: hsl(0, 100%, 67%);
+
+    /* Secundary Colors */
+    --color-offwhite: hsl(0, 0%, 94%);
+    --color-lightgray: hsl(0, 0%, 86%);
+    --color-smokeygray: hsl(0, 1%, 44%);
+    --color-offblack: hsl(0, 0%, 8%)
+}

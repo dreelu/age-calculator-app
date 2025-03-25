@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./main/assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="output.css">
+  
+  <title>Frontend Mentor | Age calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    
+    body {
+      min-height: 100dvh;
+      background-color: hsl(0, 0%, 94%);
+      font-family: 'Poppins';
+    }
+
+  </style>
+</head>
+<body class="flex justify-center items-center flex-col">
+
+  <main class="container rounded-2xl rounded-br-4xl bg-white p-5">
+    <section class="flex flex-row justify-evenly">
+      <div>
+        <p>Day</p>
+        <input type="number" name="DD" id="DD" placeholder="DD" class="w-15 border border-smokeygray rounded">
+        <p id="error-day"></p>
+      </div>
+
+      <div>
+        <p>Month</p>
+        <input type="number" name="MM" id="MM" placeholder="MM" class="w-15 border border-smokeygray rounded">
+        <p id="error-month"></p>
+      </div>
+
+      <div>
+        <p>Year</p>
+        <input type="number" name="YYYY" id="YYYY" placeholder="YYYY" class="w-15 border border-smokeygray rounded">
+        <p id="error-year"></p>
+      </div>
+
+      <!-- Colocar padding interno dos inputs -->
+    </section>
+
+    <input type="button" value="Test" onclick="converter()">
+
+    <section>
+      <h1 class="text-5xl font-bold">
+        <span id="year-span" class="font-extrabold text-purple">--</span> years
+      </h1>
+
+      <h1 class="text-5xl font-bold">
+        <span id="month-span" class="font-extrabold text-purple">--</span> months
+      </h1>
+
+      <h1 class="text-5xl font-bold">
+        <span id="day-span" class="font-extrabold text-purple">--</span> days
+      </h1>
+    </section>
+  </main>
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">drelu</a>.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
