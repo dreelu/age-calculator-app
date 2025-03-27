@@ -27,36 +27,44 @@ function converter() {
 
     // Erros
 
-    let HasError = false
-
     if (year.value == '') {
         error_year.innerHTML = 'This field is required'
-        HasError = true
+        yearError = true
     } else if (year_v > actual_year) {
         error_year.innerHTML = 'Must be in the past'
-        HasError = true
-    } else {
+        yearError = true
+    } else if (year_v < 0) {
+        error_year.innerHTML = 'Year must be d.C'
+        yearError = true
+    }
+    else {
         error_year.innerHTML = ''
     }
 
     if (month.value == '') {
         error_month.innerHTML = 'This field is required'
-        HasError = true
-    } else if (month_v > 13 || month_v < 1) {
+        monthError = true
+    } else if (month_v >= 13 || month_v < 1) {
         error_month.innerHTML = 'Must be a valid month'
-        HasError = true
+        monthError = true
     } else { 
         error_month.innerHTML = ''
     }
 
     if (day.value == '') {
         error_day.innerHTML = 'This field is required'
-        HasError = true
+        dayError = true
+    } else if (day_v > 31 || day_v <= 0){
+        error_day.innerHTML = 'Must be a valid day'
+        dayError = true
     } else {
         error_day.innerHTML = ''
     }
 
-    if (HasError) return
+    if (yearError) error_year.style.color = "hsl(0, 100%, 67%)"
+    if (monthError) error_month.style.color = "hsl(0, 100%, 67%)"
+    if (dayError) error_day.style.color = "hsl(0, 100%, 67%)"
+    if (dayError || monthError || yearError) return
 
     // Maths
 

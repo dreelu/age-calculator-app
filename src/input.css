@@ -10,5 +10,8 @@
     --color-offwhite: hsl(0, 0%, 94%);
     --color-lightgray: hsl(0, 0%, 86%);
     --color-smokeygray: hsl(0, 1%, 44%);
-    --color-offblack: hsl(0, 0%, 8%)
+    --color-offblack: hsl(0, 0%, 8%);
+
+    --radius-10xl: 7rem;
+    --text-6o5: 4rem;
 }

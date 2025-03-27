@@ -18,6 +18,7 @@
     .attribution a { color: hsl(228, 45%, 44%); }
     
     body {
+      margin: 0;
       min-height: 100dvh;
       background-color: hsl(0, 0%, 94%);
       font-family: 'Poppins';
@@ -27,41 +28,49 @@
 </head>
 <body class="flex justify-center items-center flex-col">
 
-  <main class="container rounded-2xl rounded-br-4xl bg-white p-5">
-    <section class="flex flex-row justify-evenly">
-      <div>
-        <p>Day</p>
-        <input type="number" name="DD" id="DD" placeholder="DD" class="w-15 border border-smokeygray rounded">
-        <p id="error-day"></p>
+  
+
+  <main class="rounded-2xl bg-white p-10 w-2/5 h-fit rounded-br-10xl flex flex-col justify-between">
+    <section class="flex flex-row max-[1775px]:justify-center">
+      <div class="">
+        <p class="font-bold">DAY</p>
+        <input type="number" name="DD" id="DD" placeholder="DD" class="w-30 border border-smokeygray rounded p-3 placeholder:font-bold placeholder:text-xl h-15 leading-3 max-[1175px]:w-20 max-[1175px]:leading-0 max-[1775px]:h-fit">
+        <p class="text-xs font-semibold" id="error-day"></p>
       </div>
 
-      <div>
-        <p>Month</p>
-        <input type="number" name="MM" id="MM" placeholder="MM" class="w-15 border border-smokeygray rounded">
-        <p id="error-month"></p>
+      <div class="ml-5">
+        <p class="font-bold">MONTH</p>
+        <input type="number" name="MM" id="MM" placeholder="MM" class="w-30 border border-smokeygray rounded p-3 placeholder:font-bold placeholder:text-xl h-15 leading-3 max-[1175px]:w-20 max-[1175px]:leading-0 max-[1775px]:h-fit">
+        <p class="text-xs font-semibold" id="error-month"></p>
+      </div>
+<!-- height certo do input é 13, mas so consigo alinhar o placeholder verticamente no height 15. -->
+      <div class="ml-5">
+        <p class="font-bold">YEAR</p>
+        <input type="number" name="YYYY" id="YYYY" placeholder="YYYY" class="w-30 border border-smokeygray rounded p-3 placeholder:font-bold placeholder:text-xl h-15 leading-3 max-[1175px]:w-20 max-[1175px]:leading-0 max-[1775px]:h-fit">
+        <p class="text-xs font-semibold" id="error-year"></p>
       </div>
 
-      <div>
-        <p>Year</p>
-        <input type="number" name="YYYY" id="YYYY" placeholder="YYYY" class="w-15 border border-smokeygray rounded">
-        <p id="error-year"></p>
-      </div>
-
-      <!-- Colocar padding interno dos inputs -->
     </section>
 
-    <input type="button" value="Test" onclick="converter()">
+    
+    <div class="flex items-center max-[1175px]:justify-center max-[1175px]:mt-20 max-[1175px]:mb-15 relative w-full">
+      <hr class="flex-1 border-t-2 border-gray-400 ml-2">
+      <button type="button" class="relative max-[1175px]:absolute size-20 rounded-full bg-purple bg-no-repeat bg-center cursor-pointer transition-all duration-300 group hover:scale-100" onclick="converter()">
+          <span class="absolute inset-0 bg-[url('/main/assets/images/icon-arrow.svg')] bg-[lenght:2rem] bg-no-repeat bg-center transition-all duration-300 group-hover:scale-110"></span>
+      </button>
+    </div>
+    
 
-    <section>
-      <h1 class="text-5xl font-bold">
+    <section class="">
+      <h1 class="text-7xl font-extrabold max-[1175px]:text-6o5 max-[1070px]:text-5xl max-[850px]:text-4xl">
         <span id="year-span" class="font-extrabold text-purple">--</span> years
       </h1>
 
-      <h1 class="text-5xl font-bold">
+      <h1 class="text-7xl font-extrabold max-[1175px]:text-6o5 max-[1070px]:text-5xl max-[850px]:text-4xl">
         <span id="month-span" class="font-extrabold text-purple">--</span> months
       </h1>
 
-      <h1 class="text-5xl font-bold">
+      <h1 class="text-7xl font-extrabold max-[1175px]:text-6o5 max-[1070px]:text-5xl max-[850px]:text-4xl">
         <span id="day-span" class="font-extrabold text-purple">--</span> days
       </h1>
     </section>
