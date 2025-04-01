@@ -14,4 +14,11 @@
 
     --radius-10xl: 7rem;
     --text-6o5: 4rem;
+    --text-clamp:clamp(2.5rem, 5vw, 4.5rem);
+    --text-clampt:clamp(0.7rem, 0.5vw, 3rem);
+    --spacing-clampinput:clamp(5rem, 10vw, 7.5rem);
+    --tracking-track: 0.15rem;
+
+    
 }
+

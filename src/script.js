@@ -8,6 +8,10 @@ function converter() {
     let year_span = document.querySelector('span#year-span')
     let month_span = document.querySelector('span#month-span') 
     let day_span = document.querySelector('span#day-span')
+    
+    let year_v = Number(year.value)
+    let month_v = Number(month.value)
+    let day_v = Number(day.value)
 
     let actual_year = new Date().getFullYear()
     let actual_month = new Date().getMonth() + 1
@@ -15,17 +19,20 @@ function converter() {
     let ditm = new Date(actual_year, actual_month + 1, 0).getDate();
     // ditm = days in this month
 
+    let pyear = document.querySelector('p#pyear')
+    let pmonth = document.querySelector('p#pmonth')
+    let pday = document.querySelector('p#pday')
 
     let error_year = document.querySelector('p#error-year')
     let error_month = document.querySelector('p#error-month')
     let error_day = document.querySelector('p#error-day')
 
-    let year_v = Number(year.value)
-    let month_v = Number(month.value)
-    let day_v = Number(day.value)
 
 
     // Erros
+    let dayError = false
+    let monthError = false
+    let yearError = false
 
     if (year.value == '') {
         error_year.innerHTML = 'This field is required'
@@ -61,10 +68,20 @@ function converter() {
         error_day.innerHTML = ''
     }
 
-    if (yearError) error_year.style.color = "hsl(0, 100%, 67%)"
-    if (monthError) error_month.style.color = "hsl(0, 100%, 67%)"
-    if (dayError) error_day.style.color = "hsl(0, 100%, 67%)"
-    if (dayError || monthError || yearError) return
+    if (yearError) 
+        error_year.style.color = "hsl(0, 100%, 67%)"
+        year.style.borderColor = "hsl(0, 100%, 67%)"
+        pyear.style.color = "hsl(0, 100%, 67%)"
+    if (monthError)
+        error_month.style.color = "hsl(0, 100%, 67%)"
+        month.style.borderColor = "hsl(0, 100%, 67%)"
+        pmonth.style.color = "hsl(0, 100%, 67%)"
+    if (dayError)
+        error_day.style.color = "hsl(0, 100%, 67%)"
+        day.style.borderColor = "hsl(0, 100%, 67%)"
+        pday.style.color = "hsl(0, 100%, 67%)"
+        
+    if (dayError|| monthError|| yearError) return
 
     // Maths
 
