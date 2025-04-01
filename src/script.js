@@ -16,8 +16,8 @@ function converter() {
     let actual_year = new Date().getFullYear()
     let actual_month = new Date().getMonth() + 1
     let actual_day = new Date().getDate()
-    let ditm = new Date(actual_year, actual_month + 1, 0).getDate();
-    // ditm = days in this month
+    let ditm = new Date(year_v, month_v, 0).getDate();
+    // ditm = days in that month
 
     let pyear = document.querySelector('p#pyear')
     let pmonth = document.querySelector('p#pmonth')
@@ -51,7 +51,7 @@ function converter() {
     if (month.value == '') {
         error_month.innerHTML = 'This field is required'
         monthError = true
-    } else if (month_v >= 13 || month_v < 1) {
+    } else if (month_v > 12 || month_v < 1) {
         error_month.innerHTML = 'Must be a valid month'
         monthError = true
     } else { 
@@ -61,25 +61,43 @@ function converter() {
     if (day.value == '') {
         error_day.innerHTML = 'This field is required'
         dayError = true
-    } else if (day_v > 31 || day_v <= 0){
+    } else if (day_v <= 0){
         error_day.innerHTML = 'Must be a valid day'
+        dayError = true
+    } else if (day_v > ditm) {
+        error_day.innerHTML = `Month has only ${ditm} days`
         dayError = true
     } else {
         error_day.innerHTML = ''
     }
 
-    if (yearError) 
+    if (yearError) {
         error_year.style.color = "hsl(0, 100%, 67%)"
         year.style.borderColor = "hsl(0, 100%, 67%)"
         pyear.style.color = "hsl(0, 100%, 67%)"
-    if (monthError)
+     } else {
+         error_year.removeAttribute("style")
+         year.removeAttribute("style")
+         pyear.removeAttribute("style")
+    }  
+    if (monthError) {
         error_month.style.color = "hsl(0, 100%, 67%)"
         month.style.borderColor = "hsl(0, 100%, 67%)"
         pmonth.style.color = "hsl(0, 100%, 67%)"
-    if (dayError)
+    } else {
+        error_month.removeAttribute("style")
+        month.removeAttribute("style")
+        pmonth.removeAttribute("style")
+    }
+    if (dayError) {
         error_day.style.color = "hsl(0, 100%, 67%)"
         day.style.borderColor = "hsl(0, 100%, 67%)"
         pday.style.color = "hsl(0, 100%, 67%)"
+    } else {
+        error_day.removeAttribute("style")
+        day.removeAttribute("style")
+        pday.removeAttribute("style")
+    }
         
     if (dayError|| monthError|| yearError) return
 

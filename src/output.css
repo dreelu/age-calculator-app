@@ -1767,6 +1767,9 @@
   .transition-normal {
     transition-behavior: normal;
   }
+  .delay-1000 {
+    transition-delay: 1000ms;
+  }
   .duration-300 {
     --tw-duration: 300ms;
     transition-duration: 300ms;
